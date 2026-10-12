@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stuti Dave's student portfolio in Computer Science and Data Science.">
+  <title>Stuti Dave | Student Portfolio</title>
+
+  <style>
+    :root {
+      --purple: #7055b7;
+      --dark-purple: #44316f;
+      --lavender: #eee8ff;
+      --light: #f8f6ff;
+      --text: #29243b;
+      --muted: #716b80;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--purple);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 0;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: var(--dark-purple);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      margin-top: 25px;
+      padding: 75px 40px;
+      background: linear-gradient(135deg, #e9e0ff, #ffffff);
+      border: 1px solid #e1d6ff;
+      border-radius: 28px;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      line-height: 1.15;
+      margin: 18px 0;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: var(--dark-purple);
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid var(--purple);
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      color: var(--purple);
+    }
+
+    section {
+      padding: 65px 0 10px;
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      font-size: 2rem;
+      color: var(--dark-purple);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e8e1f5;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(65, 43, 105, 0.04);
+    }
+
+    .card h3 {
+      color: var(--dark-purple);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: var(--lavender);
+      color: var(--dark-purple);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+
+    .timeline {
+      border-left: 3px solid #d8c9ff;
+      padding-left: 22px;
+    }
+
+    .timeline .card {
+      margin-bottom: 18px;
+    }
+
+    .contact-card {
+      background: var(--dark-purple);
+      color: white;
+      padding: 35px;
+      border-radius: 22px;
+    }
+
+    .contact-card h2 {
+      font-size: 2rem;
+    }
+
+    .contact-card p {
+      margin: 12px 0 22px;
+      color: #e7ddff;
+    }
+
+    .contact-card a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 45px 23px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <nav>
+      <a class="logo" href="#home">Stuti Dave.</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="eyebrow">Welcome to my portfolio</div>
+
+      <h1>Hi, I'm Stuti Dave.</h1>
+
+      <h2>Computer Science & Data Science Student</h2>
+
+      <p>
+        I'm pursuing B.Tech in Computer Science and Engineering,
+        specialising in Data Science at SVKM NMIMS Shirpur.
+        I'm building my programming foundations, exploring data
+        science and web development, and learning by creating projects.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="#projects">Explore My Projects</a>
+
+        <a class="button secondary"
+           href="https://www.linkedin.com/in/stuti-dave-61a582378/"
+           target="_blank" rel="noopener noreferrer">
+          Connect on LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="section-heading">
+        <h2>About Me</h2>
+        <p>A little about my academic and professional journey.</p>
+      </div>
+
+      <div class="card">
+        <p>
+          I am a B.Tech CSE (Data Science) student at SVKM NMIMS Shirpur.
+          I am interested in understanding how software and data can
+          be used to solve practical problems. I enjoy learning new
+          concepts, experimenting with technology, and improving my
+          skills through academic and personal projects.
+        </p>
+        <p style="margin-top: 14px;">
+          My current learning areas include programming with Python
+          and Java, web development with HTML and CSS, and the
+          fundamentals of Data Science.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-heading">
+        <h2>Skills & Technologies</h2>
+        <p>Technologies I have studied or am currently developing.</p>
+      </div>
+
+      <div class="card">
+        <h3>Programming & Development</h3>
+        <div class="tag-list">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">Data Science</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <h2>My Projects</h2>
+        <p>Academic work and personal projects from my learning journey.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>College Project</h3>
+          <p>
+            Add the name of a completed college project here.
+            Describe the problem it addresses, your contribution,
+            and the technologies you used.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Academic Project</span>
+            <span class="tag">Add technologies</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Personal Project</h3>
+          <p>
+            Add the name of a personal project here. Explain what
+            you built, what you learned, and how the project works.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Personal Project</span>
+            <span class="tag">Add technologies</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-heading">
+        <h2>Education & Learning</h2>
+        <p>My academic background and continuous learning.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="card">
+          <h3>B.Tech — Computer Science & Engineering</h3>
+          <p>Specialisation: Data Science</p>
+          <p>SVKM NMIMS, Shirpur</p>
+          <p>2025–2029</p>
+        </div>
+
+        <div class="card">
+          <h3>Courses & Certifications</h3>
+          <p>
+            Add your actual course names, certification providers,
+            and completion dates here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card">
+        <h2>Let's Connect!</h2>
+        <p>
+          I'm interested in learning, building projects, and
+          connecting with people in technology.
+        </p>
+
+        <p>
+          <a href="https://www.linkedin.com/in/stuti-dave-61a582378/"
+             target="_blank" rel="noopener noreferrer">
+            LinkedIn Profile
+          </a>
+        </p>
+
+        <p>
+          <a href="https://github.com/Stuti-1919"
+             target="_blank" rel="noopener noreferrer">
+            GitHub Profile
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Designed and built by Stuti Dave | 2026</p>
+      <p>Learning one project at a time.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
